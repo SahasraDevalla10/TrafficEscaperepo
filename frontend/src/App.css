@@ -1,0 +1,307 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #080d19;
+  color: white;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 80% 45%, #142a45 0%, transparent 48%),
+    #080d19;
+  overflow: hidden;
+}
+
+.navbar {
+  min-height: 85px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #263248;
+  gap: 20px;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 21px;
+  color: #55d9ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #c2cada;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #55d9ff;
+}
+
+.login-btn {
+  padding: 10px 24px;
+  color: #55d9ff;
+  border: 1px solid #55d9ff;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.hero {
+  min-height: 620px;
+  padding: 70px 7%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.tagline {
+  color: #55d9ff;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: #55d9ff;
+  display: block;
+}
+
+.description {
+  margin-top: 24px;
+  color: #aab6c9;
+  line-height: 1.9;
+  max-width: 470px;
+  font-size: 15px;
+}
+
+.start-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: #55d9ff;
+  color: #07111f;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: 0 0 24px #55d9ff35;
+  transition: transform 0.2s;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.feature span {
+  font-size: 24px;
+}
+
+.feature p {
+  color: #c2cada;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.road-preview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 440px;
+}
+
+.road {
+  position: relative;
+  width: 220px;
+  height: 400px;
+  background: #202b3a;
+  border-left: 5px solid #657083;
+  border-right: 5px solid #657083;
+  overflow: hidden;
+  box-shadow: 0 0 60px #55d9ff17;
+}
+
+.road-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 5px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    to bottom,
+    #d9e2ef 0 28px,
+    transparent 28px 53px
+  );
+  animation: roadMove 0.8s linear infinite;
+}
+
+.car {
+  position: absolute;
+  z-index: 2;
+  font-size: 43px;
+  filter: drop-shadow(0 4px 8px #0008);
+}
+
+.player-car {
+  bottom: 40px;
+  left: 20px;
+}
+
+.traffic-car {
+  top: 55px;
+  right: 18px;
+}
+
+.second-car {
+  top: 190px;
+  left: 18px;
+}
+
+.score-card {
+  position: absolute;
+  right: -5px;
+  bottom: 5px;
+  padding: 20px;
+  background: #121c2c;
+  border: 1px solid #33445e;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px #0005;
+}
+
+.score-card span {
+  color: #55d9ff;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.score-card h3 {
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.score-card p {
+  margin-top: 5px;
+  color: #aab6c9;
+  font-size: 12px;
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  color: #8290a6;
+  font-size: 12px;
+  border-top: 1px solid #263248;
+}
+
+@keyframes roadMove {
+  from {
+    background-position-y: 0;
+  }
+
+  to {
+    background-position-y: 53px;
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 55px 7%;
+  }
+
+  .road-preview {
+    min-height: 430px;
+  }
+
+  .score-card {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero {
+    padding: 45px 5%;
+  }
+
+  .features {
+    gap: 16px;
+  }
+
+  .feature p {
+    font-size: 10px;
+  }
+
+  .score-card {
+    right: -5px;
+    padding: 13px;
+  }
+}
